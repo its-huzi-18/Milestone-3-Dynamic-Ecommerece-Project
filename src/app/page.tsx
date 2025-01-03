@@ -1,29 +1,12 @@
-'use client';
-import React, { useState } from 'react';
-import LayoutSection from '@/app/component/HeroSection';
-import ProductData from '@/app/component/ProductData';
+import React from 'react';
+import MainPage from '@/app/component/MainPage';
 
-const MainPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
-
-  const handleCategoryClick = (category: string) => {
-    console.log('Selected category:', category);
-    setSelectedCategory(category);
-  };
-
-  const resetCategory = () => {
-    setSelectedCategory('');
-  };
-
+const Page = () => {
   return (
     <div>
-      <LayoutSection onCategoryClick={handleCategoryClick} />
-      <ProductData
-        selectedCategory={selectedCategory}
-        onResetCategory={resetCategory}
-      />
+      <MainPage />
     </div>
   );
 };
 
-export default MainPage;
+export default Page;
