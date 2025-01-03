@@ -6,8 +6,8 @@ interface HeadingProps {
 
 function Heading({ category }: HeadingProps) {
   return (
-    <div className='flex h-12 my-20 border-b-[1px] shadow-md border-gray-600 pb-2 items-center justify-between px-20'>
-      <h2 className='text-3xl font-semibold'>{category.toUpperCase() || 'Best Selling Products'}</h2>
+    <div className='flex h-12 md:my-20 border-b-[1px] shadow-md border-gray-600 pb-2 items-center justify-center md:justify-normal md:px-20'>
+      <h2 className='text-3xl font-semibold '>{category.toUpperCase() || 'Best Selling Products'}</h2>
     </div>
   );
 }

@@ -36,17 +36,17 @@ const ImageCarousel = () => {
   ];
 
   return (
-    <div className='relative max-w-[1000px] mx-auto px-4'>
+    <div className='relative lg:max-w-[1000px] mx-auto px-4'>
       <div className='overflow-hidden rounded-lg shadow-xl'>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className='relative h-[400px]'>
+            <div key={index} className='relative  h-[250px] md:h-[340px] lg:h-[400px]'>
               <Image
                 src={image}
                 alt={`Slide ${index}`}
                 layout='fill'
                 objectFit='fill'
-                className='rounded-md'
+                className='rounded-md '
               />
             </div>
           ))}

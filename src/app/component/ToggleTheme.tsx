@@ -32,7 +32,7 @@ export default function ThemeToggle() {
   return (
     <button 
       onClick={toggleTheme} 
-      className="border-[1px] rounded-[4px] px-2 h-10 text-[24px] bg-gray-200 dark:bg-gray-800 "
+      className="border-[1px] rounded-[4px] px-2 h-8 md:h-10 text-[22px] md:text-[24px] bg-gray-200 dark:bg-gray-800 "
     >
       {theme === 'light' ? <IoMoonOutline /> : <MdOutlineWbSunny /> }
     </button>

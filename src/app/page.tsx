@@ -1,27 +1,26 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
-import Categories from '@/app/component/Categories';
+import LayoutSection from '@/app/component/HeroSection';
 import ProductData from '@/app/component/ProductData';
-import HeroSection from '@/app/component/HeroSection';
 
 const MainPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
   const handleCategoryClick = (category: string) => {
-    console.log('Selected category:', category); // Debugging line to check category
+    console.log('Selected category:', category);
     setSelectedCategory(category);
   };
+
   const resetCategory = () => {
     setSelectedCategory('');
   };
+
   return (
     <div>
-      <div className='flex justify-around my-10'>
-      <Categories onCategoryClick={handleCategoryClick} />
-      <HeroSection />
-      </div>
-      <ProductData selectedCategory={selectedCategory}
-      onResetCategory={resetCategory} 
+      <LayoutSection onCategoryClick={handleCategoryClick} />
+      <ProductData
+        selectedCategory={selectedCategory}
+        onResetCategory={resetCategory}
       />
     </div>
   );

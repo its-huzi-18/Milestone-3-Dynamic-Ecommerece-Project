@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ContactPage = () => {
   return (
-    <div className="max-w-[1280px] mx-auto min-h-[70vh] md:py-20 sm:py-10 py-6 px-3">
+    <div className=" md:max-w-[1280px] mx-auto min-h-[70vh] md:py-20 sm:py-10 py-6 px-4">
       {/* Breadcrumb */}
       <div className="text-customBlack text-[14px] flex gap-2 mb-10">
         <Link className="opacity-50" href="/">
@@ -16,17 +16,17 @@ const ContactPage = () => {
       </div>
 
       {/* Contact and Form Section */}
-      <div className="w-full flex flex-col md:flex-row justify-center items-start  gap-91`                                                 md:gap-6">
+      <div className="flex flex-col md:flex-row justify-center items-start gap-14">
         {/* Contact Details */}
-        <div className="dark:bg-zinc-800 flex flex-col md:w-[35%] w-full h-auto space-y-4 p-6 shadow-black/40 shadow-md rounded-md bg-white">
+        <div className="dark:bg-zinc-800 flex flex-col md:w-[35%] w-full h-auto space-y-6 p-6 shadow-black/40 shadow-md rounded-md bg-white">
           {/* Call To Us */}
           <div className="flex items-center gap-3">
-            <div className="flex justify-center items-center w-10 h-10 rounded-full bg-red-600 p-2">
+            <div className="flex justify-center items-center w-12 h-12 rounded-full bg-red-600 p-3">
               <Image
                 src={"/images/phoneIcon.png"}
                 alt={"call phone"}
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </div>
             <span className=" text-xl font-medium">Call To Us</span>
@@ -42,12 +42,12 @@ const ContactPage = () => {
 
           {/* Write To Us */}
           <div className="flex items-center gap-3">
-            <div className="flex justify-center items-center w-10 h-10 rounded-full bg-red-600 p-2">
+            <div className="flex justify-center items-center w-12 h-12 rounded-full bg-red-600 p-3">
               <Image
                 src={"/images/mailIcon.png"}
                 alt={"email"}
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </div>
             <span className="text-xl font-medium">Write To Us</span>
@@ -64,10 +64,10 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="dark:bg-zinc-800 flex-1 md:h-[392px] shadow-black/40 shadow-md rounded-md bg-white p-6">
-          <form action="" className="space-y-4">
+        <div className="dark:bg-zinc-800 flex-1 w-full shadow-black/40 shadow-md rounded-md bg-white p-6">
+          <form action="" className="space-y-6">
             {/* Input Fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 name="name"
@@ -91,7 +91,7 @@ const ContactPage = () => {
             {/* Message Box */}
             <textarea
               name="message"
-              rows={6}
+              rows={5}
               className="w-full px-4 py-3 dark:bg-zinc-700 dark:placeholder:text-slate-300 bg-[#F5F5F5] placeholder:text-zinc-500 focus:outline-none resize-none rounded-md"
               placeholder="Your Message"
             ></textarea>

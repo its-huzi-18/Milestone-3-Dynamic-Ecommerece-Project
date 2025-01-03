@@ -22,7 +22,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 bg-white dark:bg-zinc-950">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-8 bg-white dark:bg-zinc-950 px-4 sm:px-6 md:px-8">
         {cartlist.length === 0 ? (
           <div className="col-span-2">
             <Cartcard />
@@ -31,7 +31,7 @@ const CartPage = () => {
           <ul className="col-span-2">
             {cartlist.map((item, index) => (
               <li key={item.id}>
-                <div className="flex flex-row px-3 items-center">
+                <div className="flex flex-col md:flex-row px-3 py-4 md:py-6 items-center justify-between border-b dark:border-zinc-800">
                   {/* Image */}
                   <Image
                     src={Array.isArray(item.image) ? item.image[0] : item.image}
@@ -42,7 +42,7 @@ const CartPage = () => {
                   />
 
                   {/* Content */}
-                  <div className="flex flex-col md:flex-row pl-8 w-[70%] items-center justify-between mt-4 md:mt-0">
+                  <div className="flex flex-col md:flex-row pl-8 w-full md:w-[70%] items-center justify-between mt-4 md:mt-0">
                     <div className="w-full md:w-auto">
                       {/* Title */}
                       <h2 className=" text-gray-600 font-medium text-[17px] md:text-xl leading-6 line-clamp-1">
@@ -52,7 +52,7 @@ const CartPage = () => {
                         ${item.price}
                       </h3>
 
-                      <div className="mb-2 text-cyan-700 font-medium gap-2 flex">
+                      <div className="mb-2 text-cyan-700 font-medium gap-2 flex items-center">
                         <span className="text-black border-r-[2px] pr-2 dark:text-gray-500 border-black/70">
                           Category
                         </span>
@@ -84,12 +84,9 @@ const CartPage = () => {
 
                       {/* Mobile Price and Delete */}
                       <div className="md:hidden flex flex-col gap-2 mt-3 items-start">
-                        <h2 className="text-lg text-black font-semibold line-clamp-1 leading-none">
-                          Price information
-                        </h2>
                         <FaRegTrashAlt
                           onClick={() => dispatch(deleteItem(item.id))}
-                          className="text-xl text-red-500 cursor-pointer leading-none font-semibold"
+                          className="mt-3 text-2xl text-red-500 cursor-pointer leading-none font-semibold"
                         />
                       </div>
                     </div>
@@ -113,8 +110,8 @@ const CartPage = () => {
       </div>
 
       {/* Order Summary */}
-      <div className="bg-gray-900 p-[3.5rem_2rem_1.75rem_2rem] justify-center items-center w-[30%] rounded-xl fixed top-20 right-0 mt-9 mr-4">
-        <h1 className="text-white scroll-m-20 text-lg capitalize lg:text-2xl font-semibold tracking-tight">
+      <div className="z-10  bg-gray-900 p-4 sm:p-6 lg:p-8 justify-center items-center w-full md:w-[30%] mt-12 rounded-xl md:fixed md:top-20 right-0 md:mt-9 md:mr-4">
+        <h1 className="text-white scroll-m-20 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight">
           Order Summary
         </h1>
 
@@ -146,7 +143,7 @@ const CartPage = () => {
         <div className="divider mt-4 mb-1"></div>
 
         <div className="flex justify-center pb-8 items-center w-full">
-          <button className="bg-white dark:bg-slate-700 text-gray-900-900 hover:text-white dark:hover:text-zinc-900 hover:bg-black/50 lg:text-lg duration-300 scroll-m-20 text-base hover:shadow-md font-semibold tracking-tight p-4 capitalize rounded-xl px-8">
+          <button className="bg-white dark:bg-slate-700 text-gray-900 hover:text-white dark:hover:text-zinc-900 hover:bg-black/50 lg:text-lg duration-300 scroll-m-20 text-base hover:shadow-md font-semibold tracking-tight p-4 capitalize rounded-xl px-8">
             Proceed To Checkout
           </button>
         </div>
